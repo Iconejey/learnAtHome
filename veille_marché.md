@@ -99,10 +99,51 @@ Dans le secteur des cours en ligne et cours particuliers, nous pouvons trouver c
 - **Acadomia**, des cours particuliers et des cours collectifs, en présentiel mais aussi via une plateforme en ligne.
 - **My Mooc**, un annuaire et comparateur de formations en ligne qui recense les cours de différentes plateformes pour guider les utilisateurs dans leur choix d'apprentissage.
 
-### Diapo 2 : Fonctionalités Clés
+### Diapo 2 : Fonctionnalités Clés
+
+- **Mise en relation et profils utilisateurs**
+    - Moteur de recherche multicritère (matières, tarifs, avis, proximité géographique).
+    - Formulaires d'inscription différenciés selon le rôle (bénévoles, familles, partenaires).
+    - Validation et certification des profils de tuteurs (diplômes, réactivité).
+
+- **Contenus éducatifs et apprentissage**
+    - Cours structurés et conformes aux programmes officiels (leçons, quiz, exercices résolus) chez Kartable.
+    - Classe virtuelle synchrone (visioconférence intégrée, tableau interactif, partage d'écran) chez Acadomia.
+    - Annuaire complet avec système d'avis, de notation et d'agrégation thématique de MOOCs chez My Mooc.
+
+- **Mise en relation et communication**
+    - Messagerie interne sécurisée et gestion intégrée de la prise de rendez-vous.
+    - Algorithmes d'affectation basés sur la géolocalisation et les niveaux scolaires chez l'E.S.A.
+    - Tableaux de bord de suivi de progression et statistiques d'apprentissage chez Kartable et Acadomia.
 
 ### Diapo 3 : Implications Techniques
 
+- **Bases de données et indexation de gros volumes**
+    - Stockage de fichiers (Documents, images, vidéos).
+    - Relationnelle et indéxée pour une recherche/mise en relation basée sur la position géographique, le niveau, la matière...
+
+- **APIs et intégrations de services tiers**
+    - **Paiements en ligne sécurisés :** Solutions comme Stripe pour la facturation à l'abonnement ou à l'usage (Superprof, Kartable).
+    - **Visioconférence et communication :** Intégration d'outils temps réel (WebRTC, Zoom API, Twilio) pour les classes virtuelles d'Acadomia.
+    - **Cartographie et calcul de distance :** APIs de géolocalisation (Google Maps API, adresse.data.gouv.fr) pour la mise en relation de proximité (Superprof, E.S.A).
+
+- **Outils en ligne et hors ligne**
+    - Site web pour un accès en ligne simple.
+    - Application mobile (Kartable) avec mise en cache pour accessibilié hors ligne.
+
 ### Diapo 4 : Accessibilité
 
+    - Malheureusement la navigation au clavier et le lecteur d'écran sont peu intégrés sur la plupart de ces sites.
+    - L'acessibilité pourrait être un point fort de Learn@Home pour se démarquer.
+    - On notera que Kartable intègre l'outil OpenDyslexic pour les personnes dyslexiques.
+
 ### Diapo 5 : Charte Graphique
+
+- **Identités visuelles et choix colorimétriques**
+    - **La prédominance du bleu et du blanc :** Couleur majoritaire chez E.S.A, Kartable, Acadomia et My Mooc. Le bleu inspire la confiance, le sérieux, le calme et s'associe naturellement à l'univers éducatif.
+    - **L'exception Superprof :** Utilisation intensive du rouge et du blanc avec une interface ressemblant presque à un site de rencontre.
+
+- **Composants d'interface (UI) récurrents**
+    - **Thème clair omniprésent :** L'ensemble des acteurs privilégie des fonds clairs (blancs ou gris très clairs) pour optimiser la lisibilité du texte.
+    - **Format "Card" (cartes) :** Usage massif pour présenter les fiches de tuteurs (Superprof), les modules de cours (Kartable) ou les formations proposées (My Mooc).
+    - **Visuels engageants :** Photos chaleureuses d'élèves ou de professeurs, avatars ronds et icônes épurées pour rendre l'interface rassurante, accessible et moderne.
