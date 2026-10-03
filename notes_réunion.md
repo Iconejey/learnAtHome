@@ -24,33 +24,24 @@ La page de connexion doit permettre à un élève ou à un bénévole de se conn
 - un lien vers une page de création de compte.
 
 ```mermaid
-graph LR
-    %% Actors
-    Eleve((Élève))
-    Benevole((Bénévole))
+usecase-beta
+direction LR
 
-    %% System Boundary
-    subgraph Page de Connexion
-        UC_Login([Se connecter])
-        UC_Register([Créer un compte])
-        UC_Reset([Récupérer le mot de passe oublié])
-    end
+actor Eleve("Élève")
+actor Benevole("Bénévole")
 
-    %% Associations
-    Eleve --- UC_Login
-    Eleve --- UC_Register
-    Eleve --- UC_Reset
+systemBoundary "Page de Connexion"
+    UC_Login("Se connecter")
+    UC_Register("Créer un compte")
+    UC_Reset("Récupérer le mot de passe oublié")
+end
 
-    Benevole --- UC_Login
-    Benevole --- UC_Register
-    Benevole --- UC_Reset
-
-    %% Styling
-    classDef actor fill:#FFFFFF,stroke:#000000,stroke-width:1.5px,color:#000000
-    classDef usecase fill:#FFFFFF,stroke:#000000,stroke-width:1.5px,color:#000000
-
-    class Eleve,Benevole actor
-    class UC_Login,UC_Register,UC_Reset usecase
+Eleve --> UC_Login
+Eleve --> UC_Register
+Eleve --> UC_Reset
+UC_Login <-- Benevole
+UC_Register <-- Benevole
+UC_Reset <-- Benevole
 ```
 
 ### 2. L'interface de chat
@@ -64,36 +55,27 @@ D'autres éléments doivent être ajoutés :
 - l'horodatage des messages.
 
 ```mermaid
-graph LR
-    %% Actors
-    Eleve((Élève))
-    Benevole((Bénévole))
+usecase-beta
+direction LR
 
-    %% System Boundary
-    subgraph Interface de Chat
-        UC_Send([Envoyer un message])
-        UC_History([Consulter l'historique])
-        UC_AddContact([Ajouter un contact])
-        UC_DelContact([Supprimer un contact])
-    end
+actor Eleve("Élève")
+actor Benevole("Bénévole")
 
-    %% Associations
-    Eleve --- UC_Send
-    Eleve --- UC_History
-    Eleve --- UC_AddContact
-    Eleve --- UC_DelContact
+systemBoundary "Interface de Chat"
+    UC_Send("Envoyer un message")
+    UC_History("Consulter l'historique")
+    UC_AddContact("Ajouter un contact")
+    UC_DelContact("Supprimer un contact")
+end
 
-    Benevole --- UC_Send
-    Benevole --- UC_History
-    Benevole --- UC_AddContact
-    Benevole --- UC_DelContact
-
-    %% Styling
-    classDef actor fill:#FFFFFF,stroke:#000000,stroke-width:1.5px,color:#000000
-    classDef usecase fill:#FFFFFF,stroke:#000000,stroke-width:1.5px,color:#000000
-
-    class Eleve,Benevole actor
-    class UC_Send,UC_History,UC_AddContact,UC_DelContact usecase
+Eleve --> UC_Send
+Eleve --> UC_History
+Eleve --> UC_AddContact
+Eleve --> UC_DelContact
+UC_Send <-- Benevole
+UC_History <-- Benevole
+UC_AddContact <-- Benevole
+UC_DelContact <-- Benevole
 ```
 
 ### 3. La page de calendrier
@@ -101,30 +83,21 @@ graph LR
 La page de calendrier de Learn@Home correspond à une page de calendrier classique, sur laquelle s'affichent les différents événements et rendez-vous de l'utilisateur.
 
 ```mermaid
-graph LR
-    %% Actors
-    Eleve((Élève))
-    Benevole((Bénévole))
+usecase-beta
+direction LR
 
-    %% System Boundary
-    subgraph Page de Calendrier
-        UC_ViewEvents([Consulter les événements et RDV])
-        UC_ManageEvents([Gérer les événements et RDV])
-    end
+actor Eleve("Élève")
+actor Benevole("Bénévole")
 
-    %% Associations
-    Eleve --- UC_ViewEvents
-    Eleve --- UC_ManageEvents
+systemBoundary "Page de Calendrier"
+    UC_ViewEvents("Consulter les événements et RDV")
+    UC_ManageEvents("Gérer les événements et RDV")
+end
 
-    Benevole --- UC_ViewEvents
-    Benevole --- UC_ManageEvents
-
-    %% Styling
-    classDef actor fill:#FFFFFF,stroke:#000000,stroke-width:1.5px,color:#000000
-    classDef usecase fill:#FFFFFF,stroke:#000000,stroke-width:1.5px,color:#000000
-
-    class Eleve,Benevole actor
-    class UC_ViewEvents,UC_ManageEvents usecase
+Eleve --> UC_ViewEvents
+Eleve --> UC_ManageEvents
+UC_ViewEvents <-- Benevole
+UC_ManageEvents <-- Benevole
 ```
 
 ### 4. La page de gestion des tâches
@@ -137,35 +110,26 @@ L'interface de cette page doit permettre de créer des tâches pour soi-même ou
 Il faut pouvoir lister, supprimer et ajouter des tâches, tout en maintenant la différence d'ajout de tâche entre le tuteur et l'étudiant.
 
 ```mermaid
-graph LR
-    %% Actors
-    Eleve((Élève))
-    Benevole((Bénévole))
+usecase-beta
+direction LR
 
-    %% System Boundary
-    subgraph Gestion des Tâches
-        UC_List([Lister ses tâches])
-        UC_Delete([Supprimer une tâche])
-        UC_CreateSelf([Créer une tâche pour soi-même])
-        UC_CreateOther([Créer une tâche pour l'élève suivi])
-    end
+actor Eleve("Élève")
+actor Benevole("Bénévole")
 
-    %% Associations
-    Eleve --- UC_List
-    Eleve --- UC_Delete
-    Eleve --- UC_CreateSelf
+systemBoundary "Gestion des Tâches"
+    UC_List("Lister ses tâches")
+    UC_Delete("Supprimer une tâche")
+    UC_CreateSelf("Créer une tâche pour soi-même")
+    UC_CreateOther("Créer une tâche pour l'élève suivi")
+end
 
-    Benevole --- UC_List
-    Benevole --- UC_Delete
-    Benevole --- UC_CreateSelf
-    Benevole --- UC_CreateOther
-
-    %% Styling
-    classDef actor fill:#FFFFFF,stroke:#000000,stroke-width:1.5px,color:#000000
-    classDef usecase fill:#FFFFFF,stroke:#000000,stroke-width:1.5px,color:#000000
-
-    class Eleve,Benevole actor
-    class UC_List,UC_Delete,UC_CreateSelf,UC_CreateOther usecase
+Eleve --> UC_List
+Eleve --> UC_Delete
+Eleve --> UC_CreateSelf
+UC_List <-- Benevole
+UC_Delete <-- Benevole
+UC_CreateSelf <-- Benevole
+UC_CreateOther <-- Benevole
 ```
 
 ### 5. Le tableau de bord
@@ -179,31 +143,22 @@ La page affichera :
 - un compteur de messages non lus.
 
 ```mermaid
-graph LR
-    %% Actors
-    Eleve((Élève))
-    Benevole((Bénévole))
+usecase-beta
+direction LR
 
-    %% System Boundary
-    subgraph Tableau de Bord
-        UC_ViewTasksSummary([Consulter le récapitulatif des tâches])
-        UC_ViewUpcomingEvents([Consulter les prochains événements])
-        UC_ViewUnreadCounter([Visualiser le compteur de messages non lus])
-    end
+actor Eleve("Élève")
+actor Benevole("Bénévole")
 
-    %% Associations
-    Eleve --- UC_ViewTasksSummary
-    Eleve --- UC_ViewUpcomingEvents
-    Eleve --- UC_ViewUnreadCounter
+systemBoundary "Tableau de Bord"
+    UC_ViewTasksSummary("Consulter le récapitulatif des tâches")
+    UC_ViewUpcomingEvents("Consulter les prochains événements")
+    UC_ViewUnreadCounter("Visualiser le compteur de messages non lus")
+end
 
-    Benevole --- UC_ViewTasksSummary
-    Benevole --- UC_ViewUpcomingEvents
-    Benevole --- UC_ViewUnreadCounter
-
-    %% Styling
-    classDef actor fill:#FFFFFF,stroke:#000000,stroke-width:1.5px,color:#000000
-    classDef usecase fill:#FFFFFF,stroke:#000000,stroke-width:1.5px,color:#000000
-
-    class Eleve,Benevole actor
-    class UC_ViewTasksSummary,UC_ViewUpcomingEvents,UC_ViewUnreadCounter usecase
+Eleve --> UC_ViewTasksSummary
+Eleve --> UC_ViewUpcomingEvents
+Eleve --> UC_ViewUnreadCounter
+UC_ViewTasksSummary <-- Benevole
+UC_ViewUpcomingEvents <-- Benevole
+UC_ViewUnreadCounter <-- Benevole
 ```
