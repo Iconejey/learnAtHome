@@ -617,7 +617,7 @@
 
 > ### User Story 10 : Gérer les événements et rendez-vous (Élève / Bénévole)
 >
-> _En tant qu'Élève ou Bénévole, je souhaite planifier, modifier ou annuler un événement dans mon calendrier afin de maintenir mon emploi du temps à jour._
+> _En tant que **Bénévole** (et non élève),, je souhaite planifier, modifier ou annuler un événement dans mon calendrier afin de maintenir mon emploi du temps à jour._
 >
 > #### Scénario 1 : Création d'un événement réussie
 >
@@ -659,7 +659,7 @@
 
 > ### User Story 10 : Gérer les événements et rendez-vous (Élève / Bénévole)
 >
-> _En tant qu'Élève ou Bénévole, je souhaite planifier, modifier ou annuler un événement dans mon calendrier afin de maintenir mon emploi du temps à jour._
+> _En tant que **Bénévole** (et non élève),, je souhaite planifier, modifier ou annuler un événement dans mon calendrier afin de maintenir mon emploi du temps à jour._
 >
 > #### Scénario 1 : Création d'un événement réussie
 >
